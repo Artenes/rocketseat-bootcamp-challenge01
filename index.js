@@ -6,8 +6,8 @@ const server = express();
 server.use(express.json());
 
 //data
-projects = [];
-counter = 0;
+const projects = [];
+let counter = 0;
 
 //finds the index of a project by its id, -1 if none was found
 function findProjectIndexById(id) {
