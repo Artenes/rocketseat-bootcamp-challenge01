@@ -8,6 +8,13 @@ The application will be used to store projects and its tasks.
 
 It must make use of middlewares and validate the request data.
 
+# Run
+
+```
+yarn
+yarn dev
+```
+
 # Routes
 
 ## POST /projects
