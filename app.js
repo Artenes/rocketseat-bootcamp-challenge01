@@ -8,12 +8,15 @@ server.use(express.json());
 //data
 const projects = [];
 let counter = 0;
+let testing = false;
 
 //global middleware to track the amount of requests made
 server.use((req, res, next) => {
   counter++;
 
-  console.log(`Number of requests: ${counter}`);
+  if (!testing) {
+    console.log(`Number of requests: ${counter}`);
+  }
 
   return next();
 });
@@ -120,4 +123,18 @@ server.post("/projects/:id/tasks", checkProjectExists, (req, res) => {
   return res.status(201).send();
 });
 
-module.exports = server;
+//test helper to clear the projects array
+function clear() {
+  projects.length = 0;
+}
+
+//test helper to put the app in testing mode
+function setTesting(isTesting) {
+  testing = isTesting;
+}
+
+module.exports = {
+  server,
+  clear,
+  setTesting
+};
