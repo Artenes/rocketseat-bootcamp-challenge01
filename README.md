@@ -15,6 +15,12 @@ yarn
 yarn dev
 ```
 
+# Testing
+
+```
+yarn test
+```
+
 # Routes
 
 ## POST /projects
